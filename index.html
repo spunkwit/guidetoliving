@@ -52,16 +52,42 @@
             transform: translateY(-5px);
             transition: all 0.3s ease-in-out;
         }
+ 	#flashing-image {
+    	  width: 300px;
+     	 height: auto;
+   	 }
+
     </style>
 </head>
 <body>
     <img src="https://cdn.pixabay.com/photo/2024/12/30/13/06/moped-9300285_1280.jpg" alt="Matt's Logo" class="logo">
-    <h1>Matt's Guide to Good Living</h1>
+	<title>Flashing Images</title>    
+	<h1>Matt's Guide to Good Living</h1>
     <div class="container">
         <a href="food.html" class="square">Food</a>
-        <a href="#" class="square">Movement</a>
-        <a href="#" class="square">Stillness</a>
+        <a href="movement.html" class="square">Movement</a>
+	<a href="#" class="square">Posture</a>
+        <a href="stillness.html" class="square">Stillness</a>
         <a href="#" class="square">Thought</a>
+	<a href="feeling.html" class="square">Feeling</a>
     </div>
+<img id="flashing-image" src="image1.jpg" alt="Flashing Image">
+  
+  <script>
+    const images = [
+      'image1.png',
+      'image2.png',
+      'image3.png',
+      'image4.png'
+    ];
+
+    let current = 0;
+    const imgElement = document.getElementById('flashing-image');
+
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      imgElement.src = images[current];
+    }, 100); // 100 ms = 10 times per second
+  </script>
 </body>
 </html>
